@@ -1,3 +1,2 @@
-include ':horialtalmovesheet'
-include ':app'
+include ':app' ,':horizontalmovesheet'
 rootProject.name = "HorialtalMoveSheetDemo"

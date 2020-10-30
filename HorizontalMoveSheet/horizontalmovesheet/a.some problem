@@ -1,0 +1,197 @@
+a.some problem 
+	cc數 等其他的下一頁
+
+b.question
+	1.page 4 上車點中的 請稍候出現在哪
+	2.地址text size 固定？autosize?
+	3.特殊地標 的mark type 缺少  and 點擊變定位點還是拖移
+
+	>{
+  "Data": [
+    {
+      "GeoHash": "wsqqkp",
+      "MarkList": [
+        {
+          "Geocode": {
+            "AddrId": "2730772#2",
+            "City": "新北市",
+            "Lat": 25.044682,
+            "Lng": 121.468233,
+            "Address": "新北市三重區重新路五段615號",
+            "Memo": "",
+            "Provider": 2,
+            "ProviderKey": "2730772#2",
+            "Accuracy": 0.0,
+            "Flag": 0
+          },
+          "MarkName": "地",
+          "SubName": "嗯啊啊啊！",
+          "MarkType": 3,
+          "MapIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/map.png",
+          "BannerIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/banner.png",
+          "FavAddrInfo": {
+            "Id": 3656892,
+            "Type": 99,
+            "Name": "地",
+            "Memo": "嗯啊啊啊！",
+            "Addr": {
+              "AddrId": "2730772#2",
+              "City": "新北市",
+              "Lat": 25.044682,
+              "Lng": 121.468233,
+              "Address": "新北市三重區重新路五段615號",
+              "Memo": "",
+              "Provider": 2,
+              "ProviderKey": "2730772#2",
+              "Accuracy": 0.0,
+              "Flag": 0
+            }
+          }
+        },
+        {
+          "Geocode": {
+            "AddrId": "zS2mCuHGTI9lr/UnaRsYrPNtfA\u003d\u003d#3",
+            "City": "新北市",
+            "Lat": 25.045635,
+            "Lng": 121.469295,
+            "Address": "新北市三重區重新路五段605號",
+            "Memo": "",
+            "Provider": 3,
+            "ProviderKey": "zS2mCuHGTI9lr/UnaRsYrPNtfA\u003d\u003d#3",
+            "Accuracy": 0.0,
+            "Flag": 0
+          },
+          "MarkName": "佛陀",
+          "SubName": "安安",
+          "MarkType": 3,
+          "MapIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/map.png",
+          "BannerIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/banner.png",
+          "FavAddrInfo": {
+            "Id": 3656890,
+            "Type": 99,
+            "Name": "佛陀",
+            "Memo": "安安",
+            "Addr": {
+              "AddrId": "zS2mCuHGTI9lr/UnaRsYrPNtfA\u003d\u003d#3",
+              "City": "新北市",
+              "Lat": 25.045635,
+              "Lng": 121.469295,
+              "Address": "新北市三重區重新路五段605號",
+              "Memo": "",
+              "Provider": 3,
+              "ProviderKey": "zS2mCuHGTI9lr/UnaRsYrPNtfA\u003d\u003d#3",
+              "Accuracy": 0.0,
+              "Flag": 0
+            }
+          }
+        },
+        {
+          "Geocode": {
+            "AddrId": "2730738#2",
+            "City": "新北市",
+            "Lat": 25.045475,
+            "Lng": 121.4686,
+            "Address": "新北市三重區重新路五段609巷2號",
+            "Memo": "",
+            "Provider": 2,
+            "ProviderKey": "2730738#2",
+            "Accuracy": 0.0,
+            "Flag": 0
+          },
+          "MarkName": "北京總局",
+          "SubName": "公安局",
+          "MarkType": 3,
+          "MapIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/map.png",
+          "BannerIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/banner.png",
+          "FavAddrInfo": {
+            "Id": 3656889,
+            "Type": 99,
+            "Name": "北京總局",
+            "Memo": "公安局",
+            "Addr": {
+              "AddrId": "2730738#2",
+              "City": "新北市",
+              "Lat": 25.045475,
+              "Lng": 121.4686,
+              "Address": "新北市三重區重新路五段609巷2號",
+              "Memo": "",
+              "Provider": 2,
+              "ProviderKey": "2730738#2",
+              "Accuracy": 0.0,
+              "Flag": 0
+            }
+          }
+        },
+        {
+          "Geocode": {
+            "AddrId": "2000268#0",
+            "City": "新北市",
+            "Lat": 25.0465,
+            "Lng": 121.4713,
+            "Address": "新北市三重區重新路五段519號",
+            "Memo": "捷運先嗇宮站1號出口",
+            "Provider": 0,
+            "ProviderKey": "2000268#0",
+            "Accuracy": 0.0,
+            "Flag": 0
+          },
+          "MarkName": "先嗇宮站1號出口",
+          "SubName": "",
+          "MarkType": 3,
+          "MapIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/map.png",
+          "BannerIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/favorite/banner.png",
+          "FavAddrInfo": {
+            "Id": 3276749,
+            "Type": 99,
+            "Name": "先嗇宮站1號出口",
+            "Memo": "",
+            "Addr": {
+              "AddrId": "2000268#0",
+              "City": "新北市",
+              "Lat": 25.0465,
+              "Lng": 121.4713,
+              "Address": "新北市三重區重新路五段519號",
+              "Memo": "捷運先嗇宮站1號出口",
+              "Provider": 0,
+              "ProviderKey": "2000268#0",
+              "Accuracy": 0.0,
+              "Flag": 0
+            }
+          }
+        },
+        {
+          "Geocode": {
+            "AddrId": "2000270#0",
+            "City": "新北市",
+            "Lat": 25.04624,
+            "Lng": 121.4718,
+            "Address": "新北市三重區重新路五段513之1號",
+            "Memo": "捷運先嗇宮站3號出口",
+            "Provider": 0,
+            "ProviderKey": "2000270#0",
+            "Accuracy": 0.0,
+            "Flag": 0
+          },
+          "MarkName": "先嗇宮站3號出口",
+          "SubName": "",
+          "MarkType": 1,
+          "MapIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/metro/map.png",
+          "BannerIcon": "https://gis.taiwantaxi.com.tw/TGDSWebAPI/GISresources/icon/metro/banner.png"
+        }
+      ]
+    }
+  ],
+  "DrawGeohash": [
+    "wsqqkp"
+  ],
+  "Result": {
+    "State": 0,
+    "Msg": "成功"
+  }
+}
+
+	4.服務列表順序照文件還是zepin
+
+
+c.not yet 
+	a.大頭針變化

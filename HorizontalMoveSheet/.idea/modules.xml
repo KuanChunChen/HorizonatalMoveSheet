@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorialtalMoveSheetDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/HorialtalMoveSheetDemo.iml" group="HorialtalMoveSheetDemo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="HorialtalMoveSheetDemo/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/horialtalmovesheet/horialtalmovesheet.iml" filepath="$PROJECT_DIR$/.idea/modules/horialtalmovesheet/horialtalmovesheet.iml" group="HorialtalMoveSheetDemo/horialtalmovesheet" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/horizontalmovesheet/horizontalmovesheet.iml" filepath="$PROJECT_DIR$/.idea/modules/horizontalmovesheet/horizontalmovesheet.iml" group="HorialtalMoveSheetDemo/horizontalmovesheet" />
     </modules>
   </component>
 </project>
