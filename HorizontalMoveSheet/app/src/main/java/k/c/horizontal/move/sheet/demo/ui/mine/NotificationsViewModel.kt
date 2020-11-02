@@ -1,4 +1,4 @@
-package k.c.horizontal.move.sheet.demo.ui.notifications
+package k.c.horizontal.move.sheet.demo.ui.mine
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

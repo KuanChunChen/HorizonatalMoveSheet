@@ -4,7 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.NonNull
@@ -18,62 +19,64 @@ import k.c.horizontal.move.sheet.horizontalmovesheet.widget.SpaceItemDecoration
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerScrollerListener
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerViewAdapter
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model.SwitchViewModel
+import kotlinx.android.synthetic.main.partial_bottom_card.view.*
+
 
 class HorizontalMoveView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
 
-    private lateinit var centerLayoutManager : CenterLayoutManager
-
-    lateinit var bottomBehavior: BottomSheetBehavior<View>
+    var bottomBehavior: BottomSheetBehavior<View>
 
     private var builder: Builder
+
+
 
 
     init{
 
         LayoutInflater.from(context).inflate(R.layout.partial_bottom_card, this, true)
 
-//        initRecyclerView()
-//        bottomBehavior = BottomSheetBehavior.from(frame_bottom_sheet)
+        bottomBehavior = BottomSheetBehavior.from(frame_bottom_sheet)
         builder = Builder(this).create()
-        builder.setSwitchViewText(listOf("testst","dsddfasdfa"))
+
+    }
+
+    fun setModel(switchViewModelList: MutableList<SwitchViewModel>){
+        builder.listSwitchViewModel = switchViewModelList
+    }
+
+    fun show() {
         builder.show()
     }
 
-    fun setText(textList: List<String>) {
-
-        builder.setSwitchViewText(textList).show()
-    }
-
-
-    open class Builder(private var horizontalMoveView: HorizontalMoveView){
+    class Builder(private var horizontalMoveView: HorizontalMoveView){
 
         private var centerLayoutManager : CenterLayoutManager
 
         private val spaceItemDecoration = SpaceItemDecoration(horizontalMoveView.context, 9)
         private val switchRecyclerView = horizontalMoveView.findViewById<RecyclerView>(R.id.switchView)
         private val imageIconView = horizontalMoveView.findViewById<ImageView>(R.id.image_icon)
-        private val btnConfirm = horizontalMoveView.findViewById<Button>(R.id.btn_confirm)
-
+        private val webView = horizontalMoveView.findViewById<WebView>(R.id.webView_container)
 
         private val switchRecyclerViewAdapter =
             object : SwitchRecyclerViewAdapter() {
                 override fun onItemViewClick(position: Int, itemView: View) {
 
-//                    centerLayoutManager.smoothScrollToPosition(switchView, RecyclerView.State(), position)
-//                    centerLayoutManager.scrollToPositionWithOffset(position,spaceItemDecoration.sideVisibleWidth)
-
-//                    switchRecyclerViewAdapter.notifyItemChanged(position, 1)
-//                    testLoadView(position,switchViewList)
+                    /**
+                     * Do something after click.
+                     * */
                 }
             }
 
 
+
         private val snapHelper = PagerSnapHelper()
 
-        lateinit var listOfText: List<String>
+        lateinit var listTitle: List<String>
+
+        lateinit var listSwitchViewModel: MutableList<SwitchViewModel>
 
         init {
             snapHelper.attachToRecyclerView(switchRecyclerView)
@@ -88,24 +91,14 @@ class HorizontalMoveView @JvmOverloads constructor(
         fun create(): Builder = this
 
 
-
-        @NonNull
-        fun setSwitchViewText(@NonNull listOfText: List<String>): Builder {
-
-            this.listOfText = listOfText
-            return this
-        }
-
-
-
         @NonNull
         fun show():HorizontalMoveView{
 
-            val defaultValueList = mutableListOf<SwitchViewModel>()
-
-            defaultValueList.add(SwitchViewModel(listOfText[0], "輸入下車點", R.drawable.google_plus_100))
-            defaultValueList.add(SwitchViewModel(listOfText[1], "輸入乘客資訊", R.drawable.gradient_line_100))
-            switchRecyclerViewAdapter.reset(defaultValueList)
+//            val defaultValueList = mutableListOf<SwitchViewModel>()
+//
+//            defaultValueList.add(SwitchViewModel(listTitle[0],  R.drawable.google_plus_100))
+//            defaultValueList.add(SwitchViewModel(listTitle[1], R.drawable.gradient_line_100))
+            switchRecyclerViewAdapter.reset(listSwitchViewModel)
 
 
 
@@ -123,9 +116,14 @@ class HorizontalMoveView @JvmOverloads constructor(
                 val galleryScrollerListener = object : SwitchRecyclerScrollerListener(spaceItemDecoration.mItemConsumeX) {
                     override fun changeView(position: Int) {
 
-                        Glide.with(horizontalMoveView.context).load(defaultValueList[position].imageIcon).into(imageIconView)
-                        btnConfirm.text = defaultValueList[position].buttonText
+                        Glide.with(horizontalMoveView.context).load(listSwitchViewModel[position].imageIcon).into(imageIconView)
+                        webView.webViewClient = WebViewClient()
+                        webView.settings.javaScriptEnabled = true
+                        webView.scrollBarStyle = WebView.SCROLLBARS_OUTSIDE_OVERLAY;
+                        webView.isVerticalScrollBarEnabled = true;
+                        webView.isScrollbarFadingEnabled = false;
 
+                        webView.loadUrl(listSwitchViewModel[position].url!!)
                     }
 
                 }
@@ -140,13 +138,12 @@ class HorizontalMoveView @JvmOverloads constructor(
             }
 
 
-            btnConfirm.setOnClickListener {
-
-            }
+//            btnConfirm.setOnClickListener {
+//
+//            }
 
             return horizontalMoveView
         }
-
 
     }
 

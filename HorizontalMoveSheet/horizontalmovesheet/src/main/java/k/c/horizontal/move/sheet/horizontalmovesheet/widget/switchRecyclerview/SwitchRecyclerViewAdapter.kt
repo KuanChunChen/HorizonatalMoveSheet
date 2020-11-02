@@ -7,6 +7,7 @@ import k.c.horizontal.move.sheet.horizontalmovesheet.R
 import k.c.horizontal.move.sheet.horizontalmovesheet.base.BaseListAdapter
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model.SwitchViewModel
 
+
 abstract class SwitchRecyclerViewAdapter : BaseListAdapter<SwitchViewModel, SwitchRecyclerViewAdapter.ViewHolder>() {
 
 
@@ -27,7 +28,7 @@ abstract class SwitchRecyclerViewAdapter : BaseListAdapter<SwitchViewModel, Swit
 
     inner class ViewHolder(var mItemView: View) : BaseViewHolder(mItemView) {
 
-        var textTitle : TextView = mItemView.findViewById(R.id.text_title)
+        private var textTitle : TextView = mItemView.findViewById(R.id.text_title)
 
         override fun bind(position: Int) {
 

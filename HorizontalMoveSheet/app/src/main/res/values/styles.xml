@@ -7,4 +7,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="HorizontalItemTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_54</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:drawablePadding">@dimen/spacing_small</item>
+<!--        <item name="android:drawableRight">@drawable/ic_chevron_right</item>-->
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:textAppearance">@style/ContentText.Large</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+
+    <style name="ContentText.Large">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="ContentText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
 </resources>

@@ -73,41 +73,18 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linear_add_view"
             android:layout_width="match_parent"
-            android:layout_height="137dp"
+            android:layout_height="337dp"
             android:layout_marginTop="113dp"
             android:orientation="vertical"
             android:gravity="center|top"
-
             >
 
-            <Button
-                android:id="@+id/btn_confirm"
-                android:layout_width="335dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/background_dialog_button"
-                />
-
-            <LinearLayout
+            <WebView
+                android:id="@+id/webView_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="23dp"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:textColor="#000000"
-                    android:textSize="15sp"
-                    android:textStyle="normal"
-                    app:drawableEndCompat="@drawable/btn_next"
-                    android:text = "輸入下車點，預估車資" />
-
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:background="#ffffff"/>
         </LinearLayout>
     </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

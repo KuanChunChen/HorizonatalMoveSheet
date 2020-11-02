@@ -1,22 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:overScrollMode="never"
+    tools:activity="k.c.commonview.ui.cart.CartFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <include layout="@layout/partial_mine_top" />
+
+        <RelativeLayout
+            android:id="@+id/layout_ig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            >
+
+
+            <ImageView
+                android:id="@+id/image_ig"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/instagram_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_ig"
+
+                style="@style/HorizontalItemTextView"
+
+                android:layout_toEndOf="@+id/image_ig"
+                android:gravity="center_vertical"
+                android:text="@string/mine_connect_ig" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            android:layout_marginTop="14dp"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/image_github"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/github_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_github"
+
+                style="@style/HorizontalItemTextView"
+
+                android:layout_toEndOf="@+id/image_github"
+                android:gravity="center_vertical"
+                android:text="@string/mine_connect_github" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_donate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            android:layout_marginTop="14dp"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/image_donate"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/myspace_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_donate"
+
+                style="@style/HorizontalItemTextView"
+
+                android:layout_toEndOf="@+id/image_donate"
+                android:gravity="center_vertical"
+                android:text="@string/mine_connect_donate" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
