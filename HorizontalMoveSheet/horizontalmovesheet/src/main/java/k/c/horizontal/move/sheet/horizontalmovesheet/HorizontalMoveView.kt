@@ -1,11 +1,11 @@
 package k.c.horizontal.move.sheet.horizontalmovesheet
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.annotation.NonNull
@@ -19,6 +19,7 @@ import k.c.horizontal.move.sheet.horizontalmovesheet.widget.SpaceItemDecoration
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerScrollerListener
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerViewAdapter
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model.SwitchViewModel
+import k.c.horizontal.move.sheet.horizontalmovesheet.wrapper.WebViewClientWrapper
 import kotlinx.android.synthetic.main.partial_bottom_card.view.*
 
 
@@ -74,8 +75,6 @@ class HorizontalMoveView @JvmOverloads constructor(
 
         private val snapHelper = PagerSnapHelper()
 
-        lateinit var listTitle: List<String>
-
         lateinit var listSwitchViewModel: MutableList<SwitchViewModel>
 
         init {
@@ -84,6 +83,7 @@ class HorizontalMoveView @JvmOverloads constructor(
             switchRecyclerView.adapter = switchRecyclerViewAdapter
             switchRecyclerView.layoutManager = centerLayoutManager
             switchRecyclerView.addItemDecoration(spaceItemDecoration)
+            WebViewClientWrapper(webView)
 
         }
 
@@ -94,53 +94,34 @@ class HorizontalMoveView @JvmOverloads constructor(
         @NonNull
         fun show():HorizontalMoveView{
 
-//            val defaultValueList = mutableListOf<SwitchViewModel>()
-//
-//            defaultValueList.add(SwitchViewModel(listTitle[0],  R.drawable.google_plus_100))
-//            defaultValueList.add(SwitchViewModel(listTitle[1], R.drawable.gradient_line_100))
             switchRecyclerViewAdapter.reset(listSwitchViewModel)
-
-
-
 
             val currentPosition = switchRecyclerView.adapter!!.itemCount / 2
             val offset = spaceItemDecoration.sideVisibleWidth
 
-
-
             centerLayoutManager.scrollToPositionWithOffset(currentPosition,offset)
-
 
             switchRecyclerView.post{
 
                 val galleryScrollerListener = object : SwitchRecyclerScrollerListener(spaceItemDecoration.mItemConsumeX) {
                     override fun changeView(position: Int) {
 
+                        /***
+                         * Do something here.
+                         */
                         Glide.with(horizontalMoveView.context).load(listSwitchViewModel[position].imageIcon).into(imageIconView)
-                        webView.webViewClient = WebViewClient()
-                        webView.settings.javaScriptEnabled = true
-                        webView.scrollBarStyle = WebView.SCROLLBARS_OUTSIDE_OVERLAY;
-                        webView.isVerticalScrollBarEnabled = true;
-                        webView.isScrollbarFadingEnabled = false;
-
+                        webView.goBack()
                         webView.loadUrl(listSwitchViewModel[position].url!!)
                     }
 
                 }
 
-
                 switchRecyclerView.addOnScrollListener(galleryScrollerListener)
-
                 galleryScrollerListener.setItemAnim(switchRecyclerView,currentPosition,0f)
-
                 galleryScrollerListener.updatePosition(currentPosition)
 
             }
 
-
-//            btnConfirm.setOnClickListener {
-//
-//            }
 
             return horizontalMoveView
         }

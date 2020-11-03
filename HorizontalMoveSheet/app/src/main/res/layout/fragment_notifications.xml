@@ -34,7 +34,8 @@
                 android:id="@+id/text_ig"
 
                 style="@style/HorizontalItemTextView"
-
+                android:longClickable="false"
+                android:clickable="false"
                 android:layout_toEndOf="@+id/image_ig"
                 android:gravity="center_vertical"
                 android:text="@string/mine_connect_ig" />
@@ -67,6 +68,8 @@
 
                 android:layout_toEndOf="@+id/image_github"
                 android:gravity="center_vertical"
+                android:longClickable="false"
+                android:clickable="false"
                 android:text="@string/mine_connect_github" />
 
         </RelativeLayout>
@@ -94,9 +97,11 @@
                 android:id="@+id/text_donate"
 
                 style="@style/HorizontalItemTextView"
-
+                android:longClickable="false"
+                android:clickable="false"
                 android:layout_toEndOf="@+id/image_donate"
                 android:gravity="center_vertical"
+                android:focusableInTouchMode="false"
                 android:text="@string/mine_connect_donate" />
 
         </RelativeLayout>
