@@ -4,25 +4,31 @@ import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.graphics.Typeface
+import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import k.c.horizontal.move.sheet.horizontalmovesheet.R
 
-abstract class SwitchRecyclerScrollerListener(private val itemWith: Int ) : RecyclerView.OnScrollListener() {
+abstract class SwitchRecyclerScrollerListener(private var mPosition: Int, private val itemWith: Int) : RecyclerView.OnScrollListener() {
+
 
     private var scrolledWidth = 0
-    private var mPosition = 0
+
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
 
-//        Log.d("test","dx : $dx , dy : $dy")
+        Log.d("test","dx : $dx , dy : $dy")
         setScrollInfo(recyclerView, dx)
 
     }
 
     abstract fun changeView(position: Int)
 
+
+    init {
+    }
 
 
     fun updatePosition(currentPosition: Int) {
@@ -65,6 +71,7 @@ abstract class SwitchRecyclerScrollerListener(private val itemWith: Int ) : Recy
             }
         }
 
+        Log.d("test22", movementPosition.toString())
         setItemAnim(recyclerView, movementPosition, percent)
 
 
@@ -100,38 +107,31 @@ abstract class SwitchRecyclerScrollerListener(private val itemWith: Int ) : Recy
     }
 
 
+
     fun setItemAnim(recyclerView: RecyclerView, position: Int, percent: Float) {
 
-        // 中間頁面
-        var mCurView = recyclerView.layoutManager!!.findViewByPosition(position)
-
-        // 右邊頁面
-        var mRightView = recyclerView.layoutManager!!.findViewByPosition(position + 1)
-        // 左邊頁面
-        var mLeftView = recyclerView.layoutManager!!.findViewByPosition(position - 1)
-
-        var mRRView = recyclerView.layoutManager!!.findViewByPosition(position + 2)
-
-        var mLLView = recyclerView.layoutManager!!.findViewByPosition(position - 2)
+        val centerView = recyclerView.layoutManager!!.findViewByPosition(position)
+        val rightView = recyclerView.layoutManager!!.findViewByPosition(position + 1)
+        val leftView = recyclerView.layoutManager!!.findViewByPosition(position - 1)
+        val doubleRightView = recyclerView.layoutManager!!.findViewByPosition(position + 2)
+        val doubleLeftView = recyclerView.layoutManager!!.findViewByPosition(position - 2)
 
 
 
-        if (mRRView != null) {
-            var textView : TextView = mRRView!!.findViewById(R.id.text_title)
+        if (doubleRightView != null) {
 
             setTextViewStyles(
-                textView,
+                doubleRightView!!.findViewById(R.id.text_title),
                 intArrayOf(Color.parseColor("#ababab"), Color.parseColor("#00000000")),
                 floatArrayOf(0.0f, 0.5f),
                 false
             )
         }
 
-        if (mLLView != null) {
-            var textView : TextView = mLLView!!.findViewById(R.id.text_title)
+        if (doubleLeftView != null) {
 
             setTextViewStyles(
-                textView,
+                doubleLeftView!!.findViewById(R.id.text_title),
                 intArrayOf(Color.parseColor("#00000000"), Color.parseColor("#ababab")),
                 floatArrayOf(0.5f, 1.0f),
                 false
@@ -140,32 +140,30 @@ abstract class SwitchRecyclerScrollerListener(private val itemWith: Int ) : Recy
         }
 
 
-        if (mLeftView != null) {
-            var textView : TextView = mLeftView!!.findViewById(R.id.text_title)
+        if (leftView != null) {
 
             setTextViewStyles(
-                textView,
+                leftView!!.findViewById(R.id.text_title),
                 intArrayOf(Color.parseColor("#ababab"), Color.parseColor("#ababab")),
                 floatArrayOf(0.5f, 1.0f),
                 false
             )
         }
 
-        if (mRightView != null) {
-            var textView : TextView = mRightView!!.findViewById(R.id.text_title)
+        if (rightView != null) {
 
             setTextViewStyles(
-                textView,
+                rightView!!.findViewById(R.id.text_title),
                 intArrayOf(Color.parseColor("#ababab"), Color.parseColor("#ababab")),
                 floatArrayOf(0.5f, 1.0f),
                 false
             )
         }
 
-        if (mCurView != null) {
-            var textView : TextView = mCurView!!.findViewById(R.id.text_title)
+        if (centerView != null) {
+
             setTextViewStyles(
-                textView,
+                centerView!!.findViewById(R.id.text_title),
                 intArrayOf(Color.parseColor("#000000"), Color.parseColor("#000000")),
                 floatArrayOf(0.5f, 1.0f),
                 true

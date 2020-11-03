@@ -1,8 +1,8 @@
 package k.c.horizontal.move.sheet.horizontalmovesheet
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.WebView
@@ -96,20 +96,23 @@ class HorizontalMoveView @JvmOverloads constructor(
 
             switchRecyclerViewAdapter.reset(listSwitchViewModel)
 
-            val currentPosition = switchRecyclerView.adapter!!.itemCount / 2
+            var currentPosition = switchRecyclerView.adapter!!.itemCount / 2
+            Log.d("currentPosition"," : $currentPosition")
             val offset = spaceItemDecoration.sideVisibleWidth
 
             centerLayoutManager.scrollToPositionWithOffset(currentPosition,offset)
 
             switchRecyclerView.post{
 
-                val galleryScrollerListener = object : SwitchRecyclerScrollerListener(spaceItemDecoration.mItemConsumeX) {
+                val galleryScrollerListener = object : SwitchRecyclerScrollerListener(currentPosition, spaceItemDecoration.mItemConsumeX) {
                     override fun changeView(position: Int) {
+                        currentPosition = position
 
                         /***
                          * Do something here.
                          */
-                        Glide.with(horizontalMoveView.context).load(listSwitchViewModel[position].imageIcon).into(imageIconView)
+                        Glide.with(horizontalMoveView.context)
+                            .load(listSwitchViewModel[position].imageIcon).into(imageIconView)
                         webView.goBack()
                         webView.loadUrl(listSwitchViewModel[position].url!!)
                     }
@@ -119,7 +122,6 @@ class HorizontalMoveView @JvmOverloads constructor(
                 switchRecyclerView.addOnScrollListener(galleryScrollerListener)
                 galleryScrollerListener.setItemAnim(switchRecyclerView,currentPosition,0f)
                 galleryScrollerListener.updatePosition(currentPosition)
-
             }
 
 
