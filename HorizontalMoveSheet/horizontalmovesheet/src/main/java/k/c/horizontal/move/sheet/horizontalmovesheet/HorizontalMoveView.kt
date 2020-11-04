@@ -1,8 +1,15 @@
+/**
+ * Created by Elegant Access's KC on 11/4/20 12:13 PM.
+ * Copyright (c) 2020 All rights reserved.
+ * Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+ * See more project on github : https://github.com/KuanChunChen
+ * See tutorial on my site : https://medium.com/@elegant-access-kc
+ */
+
 package k.c.horizontal.move.sheet.horizontalmovesheet
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.WebView
@@ -40,10 +47,28 @@ class HorizontalMoveView @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.partial_bottom_card, this, true)
 
         bottomBehavior = BottomSheetBehavior.from(frame_bottom_sheet)
+
+        bottomBehavior.apply {
+            addBottomSheetCallback(object :BottomSheetBehavior.BottomSheetCallback(){
+                override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                    setImageAnimate(slideOffset)
+                }
+
+                override fun onStateChanged(bottomSheet: View, newState: Int) {
+                }
+
+            })
+
+        }
+
+
         builder = Builder(this).create()
 
     }
 
+    fun setImageAnimate(alpha: Float) {
+        builder.imageIconView.alpha = alpha
+    }
     fun setModel(switchViewModelList: MutableList<SwitchViewModel>){
         builder.listSwitchViewModel = switchViewModelList
     }
@@ -58,8 +83,9 @@ class HorizontalMoveView @JvmOverloads constructor(
 
         private val spaceItemDecoration = SpaceItemDecoration(horizontalMoveView.context, 9)
         private val switchRecyclerView = horizontalMoveView.findViewById<RecyclerView>(R.id.switchView)
-        private val imageIconView = horizontalMoveView.findViewById<ImageView>(R.id.image_icon)
+        open val imageIconView = horizontalMoveView.findViewById<ImageView>(R.id.image_icon)
         private val webView = horizontalMoveView.findViewById<WebView>(R.id.webView_container)
+
 
         private val switchRecyclerViewAdapter =
             object : SwitchRecyclerViewAdapter() {
@@ -90,17 +116,15 @@ class HorizontalMoveView @JvmOverloads constructor(
         @NonNull
         fun create(): Builder = this
 
-
         @NonNull
         fun show():HorizontalMoveView{
 
             switchRecyclerViewAdapter.reset(listSwitchViewModel)
 
             var currentPosition = switchRecyclerView.adapter!!.itemCount / 2
-            Log.d("currentPosition"," : $currentPosition")
             val offset = spaceItemDecoration.sideVisibleWidth
-
             centerLayoutManager.scrollToPositionWithOffset(currentPosition,offset)
+
 
             switchRecyclerView.post{
 
@@ -120,8 +144,9 @@ class HorizontalMoveView @JvmOverloads constructor(
                 }
 
                 switchRecyclerView.addOnScrollListener(galleryScrollerListener)
-                galleryScrollerListener.setItemAnim(switchRecyclerView,currentPosition,0f)
+                galleryScrollerListener.setItemAnim(switchRecyclerView, currentPosition, 0f)
                 galleryScrollerListener.updatePosition(currentPosition)
+
             }
 
 
