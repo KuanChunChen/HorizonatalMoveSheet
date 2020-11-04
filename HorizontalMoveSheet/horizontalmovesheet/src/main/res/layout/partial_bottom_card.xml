@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:13 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/coordinator_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+
+    >
+
+    <FrameLayout
+
+        android:id="@+id/frame_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/background_bottom_card"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="140dp"
+        app:layout_behavior="k.c.horizontal.move.sheet.horizontalmovesheet.widget.CustomBottomSheetBehaviour"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_gravity="top|center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/switchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="62dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:orientation="horizontal"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+
+            app:spanCount="3"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_text"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+        <LinearLayout
+            android:id="@+id/layout_underline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="95dp"
+            >
+            <ImageView
+                android:id="@+id/iv_triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/background_indicator_triangle"
+                android:layout_gravity="top|center"/>
+
+            <TextView
+                android:id="@+id/tv_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/background_indicator_line"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="337dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:scrollbars="vertical"
+            >
+
+                <WebView
+                    android:id="@+id/webView_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"/>
+        </LinearLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

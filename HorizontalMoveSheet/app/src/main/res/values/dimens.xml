@@ -1,0 +1,53 @@
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+<dimen name="activity_vertical_margint">30dp</dimen>
+
+    <!-- view尺寸 -->
+    <dimen name="size_400">400dp</dimen>
+    <dimen name="size_300">300dp</dimen>
+    <dimen name="size_260">260dp</dimen>
+    <dimen name="size_180">180dp</dimen>
+    <dimen name="size_140">140dp</dimen>
+    <dimen name="size_120">120dp</dimen>
+    <dimen name="size_100">100dp</dimen>
+    <dimen name="size_80">80dp</dimen>
+    <dimen name="size_60">60dp</dimen>
+    <dimen name="size_54">54dp</dimen>
+    <dimen name="size_45">45dp</dimen>
+    <dimen name="size_36">36dp</dimen>
+    <dimen name="size_24">24dp</dimen>
+    <dimen name="size_18">18dp</dimen>
+    <dimen name="size_10">10dp</dimen>
+    <dimen name="size_4">4dp</dimen>
+    <dimen name="size_2">2dp</dimen>
+
+
+    <!-- view間距 -->
+    <dimen name="spacing_huge">40dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal">14dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+
+
+    <!-- 字體大小 -->
+    <dimen name="font_huge">18sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_small_fixed">12dp</dimen>
+
+    <dimen name="icon_size">45dp</dimen>
+
+
+</resources>

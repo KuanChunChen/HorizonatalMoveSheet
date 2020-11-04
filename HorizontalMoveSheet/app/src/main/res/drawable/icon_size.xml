@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:width="@dimen/icon_size"
+        android:height="@dimen/icon_size"
+        />
+
+</layer-list >

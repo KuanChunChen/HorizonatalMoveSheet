@@ -1,0 +1,17 @@
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M10,20v-6h4v6h5v-8h3L12,3 2,12h3v8z" />
+</vector>

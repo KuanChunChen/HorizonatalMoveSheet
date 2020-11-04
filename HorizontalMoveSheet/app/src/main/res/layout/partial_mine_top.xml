@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/button_home"
+        style="@style/Widget.AppCompat.ActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <ImageView
+        android:id="@+id/image_avatar"
+        android:layout_width="@dimen/size_80"
+        android:layout_height="@dimen/size_80"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/kc_icon"
+        android:padding="1dp"
+        />
+
+    <TextView
+        android:id="@+id/text_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="14sp"
+        android:layout_toStartOf="@+id/button_home"
+        android:layout_toEndOf="@id/image_avatar"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:text="@string/mine_name"
+        />
+</RelativeLayout>

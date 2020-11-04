@@ -1,0 +1,2 @@
+include ':app' ,':horizontalmovesheet'
+rootProject.name = "HorialtalMoveSheetDemo"

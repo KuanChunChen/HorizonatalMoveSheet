@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="cf2f2f3">#f2f2f3</color>
+    <color name="c49494a">#49494a</color>
+    <color name="cc99c56">#c99c56</color>
+    <color name="c202021">#202021</color>
+    <color name="c3a3733">#3a3733</color>
+    <color name="cf8f8f8">#f8f8f8</color>
+    <color name="colorTransparent">#00000000</color>
+
+
+
+    <!-- 灰度值(grayscale) -->
+    <color name="white_f6">#F6F6F6</color>
+    <color name="gray_light">#EDE8E8</color>
+    <color name="gray">#939393</color>
+    <color name="gray_dark">#737373</color>
+    <color name="black">#404245</color>
+    <color name="white_line">#f0f0f0</color>
+</resources>

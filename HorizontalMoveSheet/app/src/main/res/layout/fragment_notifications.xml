@@ -1,0 +1,124 @@
+<!--~
+  ~ Created by Elegant Access's KC on 11/4/20 12:14 PM.
+  ~ Copyright (c) 2020 All rights reserved.
+  ~ Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+  ~ See more project on github : https://github.com/KuanChunChen
+  ~ See tutorial on my site : https://medium.com/@elegant-access-kc
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    tools:activity="k.c.commonview.ui.cart.CartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/partial_mine_top" />
+
+        <RelativeLayout
+            android:id="@+id/layout_ig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            >
+
+
+            <ImageView
+                android:id="@+id/image_ig"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/instagram_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_ig"
+
+                style="@style/HorizontalItemTextView"
+                android:longClickable="false"
+                android:clickable="false"
+                android:layout_toEndOf="@+id/image_ig"
+                android:gravity="center_vertical"
+                android:text="@string/mine_connect_ig" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            android:layout_marginTop="14dp"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/image_github"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/github_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_github"
+
+                style="@style/HorizontalItemTextView"
+
+                android:layout_toEndOf="@+id/image_github"
+                android:gravity="center_vertical"
+                android:longClickable="false"
+                android:clickable="false"
+                android:text="@string/mine_connect_github" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_donate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/horizontal_bar_bg"
+            android:layout_marginTop="14dp"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/image_donate"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="@drawable/myspace_100"
+                android:layout_alignParentStart="true"
+                android:layout_marginVertical="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text_donate"
+
+                style="@style/HorizontalItemTextView"
+                android:longClickable="false"
+                android:clickable="false"
+                android:layout_toEndOf="@+id/image_donate"
+                android:gravity="center_vertical"
+                android:focusableInTouchMode="false"
+                android:text="@string/mine_connect_donate" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

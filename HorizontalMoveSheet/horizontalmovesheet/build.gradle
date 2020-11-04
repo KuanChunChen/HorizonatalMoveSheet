@@ -1,0 +1,59 @@
+/**
+ * Created by Elegant Access's KC on 11/4/20 12:13 PM.
+ * Copyright (c) 2020 All rights reserved.
+ * Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+ * See more project on github : https://github.com/KuanChunChen
+ * See tutorial on my site : https://medium.com/@elegant-access-kc
+ */
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode 100
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.dependencies["org.jetbrains.kotlin:kotlin-stdlib"]
+
+
+    implementation rootProject.ext.dependencies["androidx.core:core-ktx"]
+    implementation rootProject.ext.dependencies["androidx:appcompat"]
+    testImplementation rootProject.ext.dependencies["junit:junit"]
+    androidTestImplementation rootProject.ext.dependencies["androidx.test.ext:junit"]
+    androidTestImplementation rootProject.ext.dependencies["androidx.test.espresso:espresso-core"]
+
+    implementation rootProject.ext.dependencies["androidx.recyclerview:recyclerview"]
+
+    implementation rootProject.ext.dependencies["gson:gson-core"]
+    implementation rootProject.ext.dependencies["com.github.bumptech.glide:glide"]
+    implementation rootProject.ext.dependencies["com.google.android.material:material"]
+
+
+
+}
