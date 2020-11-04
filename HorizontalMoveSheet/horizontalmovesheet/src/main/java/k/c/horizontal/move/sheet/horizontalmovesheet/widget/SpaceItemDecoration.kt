@@ -1,3 +1,11 @@
+/**
+ * Created by Elegant Access's KC on 11/4/20 12:13 PM.
+ * Copyright (c) 2020 All rights reserved.
+ * Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+ * See more project on github : https://github.com/KuanChunChen
+ * See tutorial on my site : https://medium.com/@elegant-access-kc
+ */
+
 package k.c.horizontal.move.sheet.horizontalmovesheet.widget
 
 import android.content.Context
@@ -36,14 +44,11 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
 
         val lp = view.layoutParams as RecyclerView.LayoutParams
 
-        val width = metric.widthPixels     // 螢幕寬度（畫素）
-        val height = metric.heightPixels   // 螢幕高度（畫素）
-        val density = metric.density      // 螢幕密度（0.75 / 1.0 / 1.5）
-        val densityDpi = metric.densityDpi  // 螢幕密度DPI（120 / 160 / 240）
+        val width = metric.widthPixels
+        val height = metric.heightPixels
+        val density = metric.density
+        val densityDpi = metric.densityDpi
 
-//        Log.d("my screen : "," width :$width, height :$height, density :$density, densityDpi:$densityDpi,")
-//
-//        Log.d("my screen : "," lp : ${lp.width}")
 
 
         val itemWidth : Int = ScreenUtil().convertDpToPixel(70F,context).roundToInt()
@@ -57,8 +62,6 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
             outRect.left = (width / 2) - (itemWidth / 2) - ScreenUtil().convertDpToPixel(28F,context).roundToInt()
             outRect.right = mSpace
 
-            Log.d("screen", outRect.left.toString())
-            Log.d("screen", outRect.right.toString())
 
 
         }

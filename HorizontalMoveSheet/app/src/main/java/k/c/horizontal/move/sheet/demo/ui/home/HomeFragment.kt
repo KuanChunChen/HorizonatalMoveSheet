@@ -1,3 +1,11 @@
+/**
+ * Created by Elegant Access's KC on 11/4/20 12:12 PM.
+ * Copyright (c) 2020 All rights reserved.
+ * Your support is my biggest motivation , please follow my Instagram  : https://www.instagram.com/eleg.aces.kc/
+ * See more project on github : https://github.com/KuanChunChen
+ * See tutorial on my site : https://medium.com/@elegant-access-kc
+ */
+
 package k.c.horizontal.move.sheet.demo.ui.home
 
 import android.os.Bundle
@@ -38,7 +46,7 @@ class HomeFragment : Fragment() {
         horizontal_move_view.apply {
             this.setModel(mutableListOf(SwitchViewModel(UrlType.Github.name,  R.drawable.github_100,UrlType.Github.value),
                 SwitchViewModel(UrlType.Instagram.name,  R.drawable.instagram_100,UrlType.Instagram.value),
-                SwitchViewModel(UrlType.Google.name,  R.drawable.google_plus_100,UrlType.Google.value)))
+                SwitchViewModel(UrlType.Medium.name,  R.drawable.reminders_100,UrlType.Medium.value)))
         }.show()
         horizontal_move_view.bottomBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
