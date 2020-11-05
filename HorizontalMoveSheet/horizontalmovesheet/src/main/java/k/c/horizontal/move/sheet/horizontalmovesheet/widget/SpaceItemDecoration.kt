@@ -10,7 +10,6 @@ package k.c.horizontal.move.sheet.horizontalmovesheet.widget
 
 import android.content.Context
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import k.c.horizontal.move.sheet.horizontalmovesheet.base.util.ScreenUtil
@@ -42,7 +41,7 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
         val position = parent.getChildAdapterPosition(view)
         val metric = context.resources.displayMetrics
 
-        val lp = view.layoutParams as RecyclerView.LayoutParams
+        val layoutParams = view.layoutParams as RecyclerView.LayoutParams
 
         val width = metric.widthPixels
         val height = metric.heightPixels
@@ -52,14 +51,14 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
 
 
         val itemWidth : Int = ScreenUtil().convertDpToPixel(70F,context).roundToInt()
-        if (lp.width != itemWidth) {
-            lp.width = itemWidth
+        if (layoutParams.width != itemWidth) {
+            layoutParams.width = itemWidth
         }
 
 
         if (parent.getChildAdapterPosition(view) == 0 ) {
 
-            outRect.left = (width / 2) - (itemWidth / 2) - ScreenUtil().convertDpToPixel(28F,context).roundToInt()
+            outRect.left = sideVisibleWidth
             outRect.right = mSpace
 
 
@@ -70,7 +69,7 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
         if (parent.getChildAdapterPosition(view) == itemCount - 1) {
             outRect.left = mSpace
 
-            outRect.right = (width / 2) - (itemWidth/ 2) - ScreenUtil().convertDpToPixel(28F,context).roundToInt()
+            outRect.right = sideVisibleWidth
 
         }
 

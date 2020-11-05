@@ -9,6 +9,8 @@
 package k.c.horizontal.move.sheet.horizontalmovesheet.base.util
 
 import android.content.Context
+import android.content.res.Resources
+import android.util.DisplayMetrics
 
 class ScreenUtil{
 
@@ -20,7 +22,7 @@ class ScreenUtil{
      * @param context
      * @return pixel
      */
-    fun convertDpToPixel(dp: Float, context: Context): Float {
+    fun convertDpToPixel(dp: Float, context: Context?): Float {
         return dp * getDensity(context)
     }
 
@@ -42,8 +44,8 @@ class ScreenUtil{
      * @param context
      * @return
      */
-    private fun getDensity(context: Context): Float {
-        val metrics = context.resources.displayMetrics
-        return metrics.density
+    private fun getDensity(context: Context?): Float {
+        val metrics: DisplayMetrics = if (context != null) context.resources.displayMetrics else Resources.getSystem().displayMetrics
+        return  (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
     }
 }
