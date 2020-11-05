@@ -11,9 +11,14 @@ package k.c.horizontal.move.sheet.horizontalmovesheet.widget
 import android.content.Context
 import android.util.AttributeSet
 import android.util.DisplayMetrics
+import android.util.Log
+import android.view.TextureView
+import android.view.View
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
+import k.c.horizontal.move.sheet.horizontalmovesheet.R
 
 class CenterLayoutManager : LinearLayoutManager {
 
@@ -32,8 +37,24 @@ class CenterLayoutManager : LinearLayoutManager {
         defStyleRes
     )
 
+    override fun attachView(child: View, index: Int, lp: RecyclerView.LayoutParams?) {
+        super.attachView(child, index, lp)
+
+        child.findViewById<TextView>(R.id.text_title).text = "test"
+
+    }
+
+    override fun getPosition(view: View): Int {
+        return super.getPosition(view)
+//        Log.d("testst",)
+
+        view.findViewById<TextView>(R.id.text_title).text = "test"
+
+    }
+
     override fun smoothScrollToPosition(recyclerView: RecyclerView, state: RecyclerView.State?, position: Int) {
 
+        Log.e("test","current position :$position")
         val smoothScroller = CenterSmoothScroller(recyclerView.context)
         smoothScroller.targetPosition = position
         startSmoothScroll(smoothScroller)
@@ -43,7 +64,7 @@ class CenterLayoutManager : LinearLayoutManager {
     private class CenterSmoothScroller internal constructor(context: Context) :
         LinearSmoothScroller(context) {
 
-        companion object { private const val SMOOTH_SPEED_PER_PIXEL = 1990f }
+        companion object { private const val SMOOTH_SPEED_PER_PIXEL = 1f }
 
 //        override fun calculateDtToFit(viewStart: Int, viewEnd: Int, boxStart: Int, boxEnd: Int, snapPreference: Int): Int {
 //            return boxStart + (boxEnd - boxStart) / 2 - (viewStart + (viewEnd - viewStart) / 2)

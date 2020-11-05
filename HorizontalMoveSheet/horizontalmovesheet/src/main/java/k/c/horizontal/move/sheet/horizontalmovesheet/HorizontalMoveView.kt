@@ -12,6 +12,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.webkit.WebView
@@ -23,6 +24,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import k.c.horizontal.move.sheet.horizontalmovesheet.base.util.ScreenUtil
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.CenterLayoutManager
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.SpaceItemDecoration
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerScrollerListener
@@ -30,6 +32,7 @@ import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.S
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model.SwitchViewModel
 import k.c.horizontal.move.sheet.horizontalmovesheet.wrapper.WebViewClientWrapper
 import kotlinx.android.synthetic.main.partial_bottom_card.view.*
+import kotlin.math.roundToInt
 
 
 class HorizontalMoveView @JvmOverloads constructor(
@@ -123,8 +126,11 @@ class HorizontalMoveView @JvmOverloads constructor(
             switchRecyclerViewAdapter.reset(listSwitchViewModel)
 
             var currentPosition = switchRecyclerView.adapter!!.itemCount / 2
+            Log.d("testt", "$currentPosition")
+
             val offset = spaceItemDecoration.sideVisibleWidth
-            centerLayoutManager.scrollToPositionWithOffset(currentPosition,offset)
+
+//            centerLayoutManager.scrollToPosition(currentPosition - 1)
 
 
             switchRecyclerView.post{
@@ -145,11 +151,12 @@ class HorizontalMoveView @JvmOverloads constructor(
                 }
 
                 switchRecyclerView.addOnScrollListener(galleryScrollerListener)
-                galleryScrollerListener.setItemAnim(switchRecyclerView, currentPosition, 0f)
-                galleryScrollerListener.updatePosition(currentPosition)
+                galleryScrollerListener.setItemAnim(switchRecyclerView, currentPosition)
+//                galleryScrollerListener.updatePosition(currentPosition)
 
             }
 
+            centerLayoutManager.scrollToPositionWithOffset(currentPosition, spaceItemDecoration.sideVisibleWidth)
 
             return horizontalMoveView
         }
