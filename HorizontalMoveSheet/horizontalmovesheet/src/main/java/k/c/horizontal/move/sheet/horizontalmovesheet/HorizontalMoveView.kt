@@ -8,7 +8,9 @@
 
 package k.c.horizontal.move.sheet.horizontalmovesheet
 
+import android.app.Activity
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -45,22 +47,21 @@ class HorizontalMoveView @JvmOverloads constructor(
     init{
 
         LayoutInflater.from(context).inflate(R.layout.partial_bottom_card, this, true)
+        (context as Activity).requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_NOSENSOR
 
         bottomBehavior = BottomSheetBehavior.from(frame_bottom_sheet)
 
         bottomBehavior.apply {
             addBottomSheetCallback(object :BottomSheetBehavior.BottomSheetCallback(){
                 override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                    setImageAnimate(slideOffset)
+                    setImageAnimate(alpha = slideOffset)
                 }
 
                 override fun onStateChanged(bottomSheet: View, newState: Int) {
+
                 }
-
             })
-
         }
-
 
         builder = Builder(this).create()
 
@@ -77,7 +78,7 @@ class HorizontalMoveView @JvmOverloads constructor(
         builder.show()
     }
 
-    class Builder(private var horizontalMoveView: HorizontalMoveView){
+    open class Builder(private var horizontalMoveView: HorizontalMoveView){
 
         private var centerLayoutManager : CenterLayoutManager
 
