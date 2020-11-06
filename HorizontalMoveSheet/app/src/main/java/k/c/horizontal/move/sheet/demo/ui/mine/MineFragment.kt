@@ -51,7 +51,7 @@ class MineFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View?)  {
         when (view?.id) {
-            R.id.layout_ig -> startWebActivity(UrlType.A)
+            R.id.layout_ig -> startWebActivity(UrlType.Instagram)
             R.id.layout_github -> startWebActivity(UrlType.Github)
             R.id.layout_donate -> startWebActivity(UrlType.Paypal)
             R.id.button_home ->  Navigation.findNavController(view).navigateUp()

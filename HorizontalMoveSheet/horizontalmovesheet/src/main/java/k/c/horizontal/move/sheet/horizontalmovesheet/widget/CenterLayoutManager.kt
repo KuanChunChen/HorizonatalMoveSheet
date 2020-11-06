@@ -37,20 +37,6 @@ class CenterLayoutManager : LinearLayoutManager {
         defStyleRes
     )
 
-    override fun attachView(child: View, index: Int, lp: RecyclerView.LayoutParams?) {
-        super.attachView(child, index, lp)
-
-        child.findViewById<TextView>(R.id.text_title).text = "test"
-
-    }
-
-    override fun getPosition(view: View): Int {
-        return super.getPosition(view)
-//        Log.d("testst",)
-
-        view.findViewById<TextView>(R.id.text_title).text = "test"
-
-    }
 
     override fun smoothScrollToPosition(recyclerView: RecyclerView, state: RecyclerView.State?, position: Int) {
 
