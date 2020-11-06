@@ -18,10 +18,12 @@ import kotlin.math.roundToInt
 class SpaceItemDecoration(private val context: Context, private var mSpace: Int) : RecyclerView.ItemDecoration() {
 
 
-    var mItemConsumeX = ScreenUtil().convertDpToPixel(88F, context).roundToInt()
+    var mItemConsumeX = ScreenUtil().convertDpToPixel(70F, context).roundToInt() + mSpace * 2
+
+
 
     var sideVisibleWidth =
-        (context.resources.displayMetrics.widthPixels - ScreenUtil().convertDpToPixel(88F, context)
+        (context.resources.displayMetrics.widthPixels - ScreenUtil().convertDpToPixel(70F, context)
             .roundToInt()) / 2   - ScreenUtil().convertDpToPixel(28F, context) .roundToInt()
 
 
@@ -52,7 +54,7 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
 
 
 
-        val itemWidth : Int = ScreenUtil().convertDpToPixel(88F,context).roundToInt()
+        val itemWidth : Int = ScreenUtil().convertDpToPixel(70F,context).roundToInt()
         if (layoutParams.width != itemWidth) {
             layoutParams.width = itemWidth
         }
@@ -61,20 +63,20 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
         if (parent.getChildAdapterPosition(view) == 0 ) {
 
             outRect.left = sideVisibleWidth
-//            outRect.right = mSpace
+            outRect.right = mSpace
 
         }
 
 
         if (parent.getChildAdapterPosition(view) == itemCount - 1) {
-//            outRect.left = mSpace
+            outRect.left = mSpace
             outRect.right = sideVisibleWidth
 
         }
 
         if (parent.getChildAdapterPosition(view) != itemCount - 1 && parent.getChildAdapterPosition(view) != 0) {
-//            outRect.left = mSpace
-//            outRect.right = mSpace
+            outRect.left = mSpace
+            outRect.right = mSpace
 
 
         }

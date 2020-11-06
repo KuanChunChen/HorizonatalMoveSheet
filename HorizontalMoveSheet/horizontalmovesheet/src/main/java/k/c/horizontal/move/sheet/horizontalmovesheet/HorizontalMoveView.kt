@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import k.c.horizontal.move.sheet.horizontalmovesheet.base.util.ScreenUtil
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.CenterLayoutManager
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.SpaceItemDecoration
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.SwitchRecyclerScrollerListener
@@ -31,6 +32,7 @@ import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.S
 import k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model.SwitchViewModel
 import k.c.horizontal.move.sheet.horizontalmovesheet.wrapper.WebViewClientWrapper
 import kotlinx.android.synthetic.main.partial_bottom_card.view.*
+import kotlin.math.roundToInt
 
 
 class HorizontalMoveView @JvmOverloads constructor(
@@ -126,7 +128,10 @@ class HorizontalMoveView @JvmOverloads constructor(
             var currentPosition = switchRecyclerView.adapter!!.itemCount / 2
             Log.d("testt", "$currentPosition")
 
-            val offset = spaceItemDecoration.sideVisibleWidth
+            val offset = spaceItemDecoration.sideVisibleWidth - 9
+
+
+
 
 
             switchRecyclerView.post{
