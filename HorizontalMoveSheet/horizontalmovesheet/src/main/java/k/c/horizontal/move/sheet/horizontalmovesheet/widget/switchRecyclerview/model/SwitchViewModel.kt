@@ -8,7 +8,6 @@
 
 package k.c.horizontal.move.sheet.horizontalmovesheet.widget.switchRecyclerview.model
 
-import androidx.fragment.app.Fragment
 import com.google.gson.annotations.SerializedName
 
 data class SwitchViewModel (

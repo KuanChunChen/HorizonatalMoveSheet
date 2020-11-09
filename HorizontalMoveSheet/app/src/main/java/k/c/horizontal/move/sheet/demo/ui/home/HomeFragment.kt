@@ -44,9 +44,11 @@ class HomeFragment : Fragment() {
     private fun initView(){
 
         horizontal_move_view.apply {
-            this.setModel(mutableListOf(SwitchViewModel(UrlType.Github.name,  R.drawable.github_100,UrlType.Github.value),
+            setModel(mutableListOf(
+                SwitchViewModel(UrlType.Github.name,  R.drawable.github_100,UrlType.Github.value),
                 SwitchViewModel(UrlType.Instagram.name,  R.drawable.instagram_100,UrlType.Instagram.value),
-                SwitchViewModel(UrlType.Medium.name,  R.drawable.reminders_100,UrlType.Medium.value)))
+                SwitchViewModel(UrlType.Medium.name,  R.drawable.reminders_100,UrlType.Medium.value)
+            ))
         }.show()
         horizontal_move_view.bottomBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
