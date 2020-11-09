@@ -18,11 +18,15 @@ import kotlin.math.roundToInt
 class SpaceItemDecoration(private val context: Context, private var mSpace: Int) : RecyclerView.ItemDecoration() {
 
 
-
-
     var mItemConsumeX = ScreenUtil().convertDpToPixel(70F, context).roundToInt() + mSpace * 2
 
-    var sideVisibleWidth = (context.resources.displayMetrics.widthPixels - ScreenUtil().convertDpToPixel(70F,context).roundToInt()) / 2 - ScreenUtil().convertDpToPixel(28F,context).roundToInt()
+
+
+    var sideVisibleWidth =
+        (context.resources.displayMetrics.widthPixels - ScreenUtil().convertDpToPixel(70F, context)
+            .roundToInt()) / 2   - ScreenUtil().convertDpToPixel(28F, context) .roundToInt()
+
+
 
 
     /**
@@ -61,14 +65,11 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
             outRect.left = sideVisibleWidth
             outRect.right = mSpace
 
-
-
         }
 
 
         if (parent.getChildAdapterPosition(view) == itemCount - 1) {
             outRect.left = mSpace
-
             outRect.right = sideVisibleWidth
 
         }
@@ -76,6 +77,7 @@ class SpaceItemDecoration(private val context: Context, private var mSpace: Int)
         if (parent.getChildAdapterPosition(view) != itemCount - 1 && parent.getChildAdapterPosition(view) != 0) {
             outRect.left = mSpace
             outRect.right = mSpace
+
 
         }
 
