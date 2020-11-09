@@ -14,13 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 
-class CenterLayoutManager : LinearLayoutManager {
-
-    constructor(context: Context, orientation: Int, reverseLayout: Boolean) : super(
-        context,
-        orientation,
-        reverseLayout
-    )
+class CenterLayoutManager(context: Context, orientation: Int, reverseLayout: Boolean)
+    : LinearLayoutManager(context, orientation, reverseLayout) {
 
 
     override fun smoothScrollToPosition(recyclerView: RecyclerView, state: RecyclerView.State?, position: Int) {
@@ -35,10 +30,6 @@ class CenterLayoutManager : LinearLayoutManager {
         LinearSmoothScroller(context) {
 
         companion object { private const val SMOOTH_SPEED_PER_PIXEL = 1f }
-
-//        override fun calculateDtToFit(viewStart: Int, viewEnd: Int, boxStart: Int, boxEnd: Int, snapPreference: Int): Int {
-//            return boxStart + (boxEnd - boxStart) / 2 - (viewStart + (viewEnd - viewStart) / 2)
-//        }
 
         /**
          * 控制滑動速度
