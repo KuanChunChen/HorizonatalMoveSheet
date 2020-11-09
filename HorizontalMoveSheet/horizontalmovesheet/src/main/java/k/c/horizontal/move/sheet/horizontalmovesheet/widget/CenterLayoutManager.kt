@@ -9,20 +9,12 @@
 package k.c.horizontal.move.sheet.horizontalmovesheet.widget
 
 import android.content.Context
-import android.util.AttributeSet
 import android.util.DisplayMetrics
-import android.util.Log
-import android.view.TextureView
-import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
-import k.c.horizontal.move.sheet.horizontalmovesheet.R
 
 class CenterLayoutManager : LinearLayoutManager {
-
-    constructor(context: Context) : super(context)
 
     constructor(context: Context, orientation: Int, reverseLayout: Boolean) : super(
         context,
@@ -30,17 +22,9 @@ class CenterLayoutManager : LinearLayoutManager {
         reverseLayout
     )
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(
-        context,
-        attrs,
-        defStyleAttr,
-        defStyleRes
-    )
-
 
     override fun smoothScrollToPosition(recyclerView: RecyclerView, state: RecyclerView.State?, position: Int) {
 
-        Log.e("test","current position :$position")
         val smoothScroller = CenterSmoothScroller(recyclerView.context)
         smoothScroller.targetPosition = position
         startSmoothScroll(smoothScroller)

@@ -47,8 +47,6 @@ class ScreenUtil{
      */
     private fun getDensity(context: Context?): Float {
         val metrics: DisplayMetrics = if (context != null) context.resources.displayMetrics else Resources.getSystem().displayMetrics
-        Log.d("ttest","$metrics.densityDpi.toFloat()")
-
         return  (metrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
     }
 }

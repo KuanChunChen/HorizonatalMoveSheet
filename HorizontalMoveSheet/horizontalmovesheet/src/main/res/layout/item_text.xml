@@ -23,6 +23,5 @@
     android:textColor="#ababab"
     android:lineSpacingExtra="9sp"
     android:autoSizeTextType="uniform"
-android:background="@drawable/textview_border"
     tools:text="@sample/recycler_sample.json/data/title_name"
     android:textSize="12sp" />

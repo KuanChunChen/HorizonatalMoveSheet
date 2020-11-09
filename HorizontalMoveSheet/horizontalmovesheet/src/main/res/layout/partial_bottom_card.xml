@@ -48,9 +48,6 @@
             tools:orientation="horizontal"
             android:layout_marginLeft="28dp"
             android:layout_marginRight="28dp"
-            android:background="#03DAC5"
-
-
             app:spanCount="3"
             tools:itemCount="3"
             tools:listitem="@layout/item_text"
@@ -66,13 +63,6 @@
             android:orientation="vertical"
             android:layout_marginTop="95dp"
             >
-<!--            <ImageView-->
-<!--                android:id="@+id/iv_triangle"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:src="@drawable/background_indicator_triangle"-->
-<!--                android:layout_gravity="top|center"/>-->
 
             <TextView
                 android:id="@+id/iv_triangle"
