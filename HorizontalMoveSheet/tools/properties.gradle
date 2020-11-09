@@ -1,0 +1,67 @@
+ext {
+    vendor = [
+            
+            "defaultVendor": "ElegAcesKc",
+    ]
+
+    propertiesKey = [
+
+            "Instagram": "Instagram",
+            "Github": "Github",
+            "Medium": "Medium",
+            "PayPal": "PayPal"
+
+    ]
+}
+
+
+ext.initEnvirnoment = { String vendor ->
+
+    final String FILE_PREFIX_PATH = "/src/main/assets/properties/"
+    final String FILE_EXTENSION = ".properties"
+
+    Properties properties = new Properties()
+    String vendorName = vendor
+
+    File proFile = new File(projectDir.absolutePath + FILE_PREFIX_PATH, vendorName + FILE_EXTENSION)
+
+    if (!proFile.exists()) {
+
+        vendorName = ext.vendor["defaultVendor"]
+        proFile = new File(projectDir.absolutePath + FILE_PREFIX_PATH, vendorName + FILE_EXTENSION)
+        println "Assign path not exist , use default path."
+    }
+
+    println "Get Properties from :" + proFile.path
+
+    properties.load(proFile.newDataInputStream())
+    gradle.ext.Instagram = ext.getPropertyByKey(properties, ext.propertiesKey["Instagram"])
+    gradle.ext.Github = ext.getPropertyByKey(properties, ext.propertiesKey["Github"])
+    gradle.ext.Medium = ext.getPropertyByKey(properties, ext.propertiesKey["Medium"])
+    gradle.ext.PayPal = ext.getPropertyByKey(properties, ext.propertiesKey["PayPal"])
+
+    ext.showMapConfig()
+
+}
+
+ext.getPropertyByKey = { Properties properties, String key ->
+
+    return properties.getProperty(key) != null ? properties.getProperty(key) : ""
+}
+
+ext.showMapConfig = {
+
+    println "┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+    println "| Created by Elegant Access's KC"
+    println "| Copyright (c) 2020 All rights reserved."
+    println "| Your support is my biggest motivation , please follow my Instagram  : $gradle.ext.Instagram"
+    println "| See more project on github : $gradle.ext.Github"
+    println "| See tutorial on my site : $gradle.ext.Medium"
+    println "| Or you can donate some source to me :  $gradle.ext.PayPal"
+    println "| Finally,thanks for your read and support!"
+    println "└────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+
+}
+
+
+
