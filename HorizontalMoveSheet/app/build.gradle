@@ -9,6 +9,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply from: "$project.rootDir/tools/properties.gradle"
+
 
 android {
     compileSdkVersion 30
@@ -36,6 +38,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    productFlavors {
+        project.ext.initEnvirnoment("ElegAcesKc")
     }
 }
 
