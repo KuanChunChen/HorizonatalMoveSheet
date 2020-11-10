@@ -8,11 +8,7 @@ android:
 jdk:
   - oraclejdk8
 script:
-  - ./gradlew testDebug
-before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-cache:
-  directories:
-    - $HOME/.m2
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+ - ./gradlew assembleRelease  
+
+before_deploy:       
+  - mv app/build/outputs/apk/app-release.apk app/build/outputs/apk/buff.apk  i
