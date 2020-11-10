@@ -1,6 +1,5 @@
-sudo: required
-
 language: android
+
 jdk: oraclejdk8
 
 
@@ -30,5 +29,5 @@ android:
   - extra
 
 script:
-- "./gradlew assembleDebug
+- "./gradlew assembleDebug"
 
