@@ -29,5 +29,5 @@ android:
   - extra
 
 script:
-- "./gradlew assembleDebug"
+- ./gradlew assembleDebug
 
