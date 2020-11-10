@@ -5,6 +5,8 @@ android:
     - platform-tools
     - build-tools-30.0.2
     - android-30
+    - extra-android-m2repository     
+    - extra-android-support        
 jdk:
   - oraclejdk8
 script:
