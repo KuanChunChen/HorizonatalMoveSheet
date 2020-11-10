@@ -8,7 +8,8 @@ android:
 jdk:
   - oraclejdk8
 script:
- - ./gradlew assembleRelease  
+  - ./gradlew assembleRelease  
 
 before_deploy:       
-  - mv app/build/outputs/apk/app-release.apk app/build/outputs/apk/buff.apk  i
+  - mv app/build/outputs/apk/app-release.apk app/build/outputs/apk/horizon_move_demo.apk
+
